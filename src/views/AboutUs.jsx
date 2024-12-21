@@ -1,26 +1,11 @@
-import { useEffect, useState } from 'react';
+import {} from 'react';
 
 const AboutUs = () => {
-  const [teamImages, setTeamImages] = useState([]);
-
-  useEffect(() => {
-    // Fetching random male profile images for team members from Random User API
-    const fetchTeamImages = async () => {
-      try {
-        const responses = await Promise.all(
-          Array(3).fill(0).map(() =>
-            fetch('https://randomuser.me/api/?gender=male').then(res => res.json())
-          )
-        );
-        const images = responses.map(response => response.results[0].picture.large); // Fetching the profile image
-        setTeamImages(images);
-      } catch (error) {
-        console.error('Error fetching team images:', error);
-      }
-    };
-
-    fetchTeamImages();
-  }, []);
+  const teamImages = [
+    'https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWFufGVufDB8fDB8fHww', 
+    'https://t3.ftcdn.net/jpg/03/28/19/46/360_F_328194664_RKSHvMLgHphnD1nwQYb4QKcNeEApJmqa.jpg',
+    'https://media.istockphoto.com/id/507995592/photo/pensive-man-looking-at-the-camera.jpg?s=612x612&w=0&k=20&c=fVoaIqpHo07YzX0-Pw51VgDBiWPZpLyGEahSxUlai7M=', 
+  ];
 
   return (
     <section className="container mt-4">
